@@ -8,9 +8,8 @@ interface FactoryTourModalProps {
   onClose: () => void;
 }
 
-export default function FactoryTourModal({ isOpen, onClose }: FactoryTourModalProps): React.ReactElement {
-
-  function closeModal(): void {
+export default function FactoryTourModal({ isOpen, onClose }: FactoryTourModalProps) {
+  function closeModal() {
     onClose();
   }
 
@@ -42,13 +41,17 @@ export default function FactoryTourModal({ isOpen, onClose }: FactoryTourModalPr
             >
               <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all relative">
                 <button
+                  type="button"  // <-- add this to prevent accidental form submit
                   onClick={closeModal}
                   className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl"
                 >
                   &times;
                 </button>
 
-                <Dialog.Title as="h3" className="text-2xl font-bold text-center mb-6 text-[rgba(38,27,108,1)]">
+                <Dialog.Title
+                  as="h3"
+                  className="text-2xl font-bold text-center mb-6 text-[rgba(38,27,108,1)]"
+                >
                   Book A Factory Tour
                 </Dialog.Title>
 
@@ -87,7 +90,6 @@ export default function FactoryTourModal({ isOpen, onClose }: FactoryTourModalPr
                     SUBMIT
                   </button>
                 </form>
-
               </Dialog.Panel>
             </Transition.Child>
           </div>
