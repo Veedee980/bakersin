@@ -3,46 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface Service {
-  iconSrc: string;
-  altText: string;
-  title: string;
-  description: string;
-}
 
-// Updated list of services to include five items
-const services: Service[] = [
-  {
-    iconSrc: "/images/service-baked-goods.png", // Path for Baked Goods icon
-    altText: "Baked Goods Icon",
-    title: "Baked Goods",
-    description: "Discover our wide variety of freshly baked breads, pastries, and cakes made with premium ingredients.",
-  },
-  {
-    iconSrc: "/images/service-manufacturing.png", // Path for Manufacturing icon
-    altText: "Manufacturing Icon",
-    title: "Manufacturing",
-    description: "Leveraging state-of-the-art facilities, we produce high-quality baked products at scale for various markets.",
-  },
-  {
-    iconSrc: "/images/service-distribution.png", // Path for Distribution icon
-    altText: "Distribution Icon",
-    title: "Distribution",
-    description: "Our robust logistics ensure timely and fresh delivery of products to your doorstep or retail outlets.",
-  },
-  {
-    iconSrc: "/images/service-innovation.png", // Placeholder for 4th service icon - Adjust path and content
-    altText: "Innovation Icon",
-    title: "Innovation & R&D",
-    description: "Continuously exploring new flavors and healthier options, driven by market trends and customer feedback.",
-  },
-  {
-    iconSrc: "/images/service-custom-orders.png", // Placeholder for 5th service icon - Adjust path and content
-    altText: "Custom Orders Icon",
-    title: "Custom Orders",
-    description: "From special events to unique dietary needs, we offer personalized custom bakery orders.",
-  },
-];
 const AboutUsHero: React.FC = () => {
   return (
     <>
@@ -244,10 +205,10 @@ const AboutUsHero: React.FC = () => {
           </h2>
 
           <p className="text-text-paragraph-dark-gray text-base leading-relaxed mb-4">
-            Thank you for visiting our website. At Baker's Inn, we are committed to delivering
+            Thank you for visiting our website. At Bakers Inn, we are committed to delivering
             quality premium bread to our customers. We work with a team of over 1500
             employees nationwide. Our aim is to uphold the highest ethical standards and
-            perpetuate excellence in the delivery of our products. For us at Baker's Inn, we aim to
+            perpetuate excellence in the delivery of our products. For us at Bakers Inn, we aim to
             improve the accessibility of our bread. We are accountable to our stakeholders to
             deliver what we promise.
           </p>

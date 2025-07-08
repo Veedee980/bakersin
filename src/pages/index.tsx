@@ -67,7 +67,7 @@ export default function Home() {
       <section className="about max-w-6xl mx-auto px-4 py-16 flex flex-col items-center" id="about">
         <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
           <h2 className="text-[rgba(38,27,108,1)] text-2xl md:text-3xl font-bold max-w-sm">
-            About Baker’s Inn
+            About Bakers Inn
           </h2>
           <div className="max-w-xl space-y-4">
             <p className="text-gray-700 leading-relaxed">
@@ -80,9 +80,9 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full sm:justify-center sm:items-center sm:max-w-2xl">
           {["sandwitch", "meatpie", "doughnut", "bread"].map((item) => (
-            <img
+            <Image
               key={item}
-              src={`/images/${item}.png`}
+              src={`/Images/${item}.png`}
               alt={item}
               className="rounded w-full h-full object-cover"
             />
@@ -103,8 +103,8 @@ export default function Home() {
             { src: "donuts", label: "Donuts" },
           ].map(({ src, label }) => (
             <div key={src} className="relative rounded overflow-hidden">
-              <img
-                src={`/images/${src}.png`}
+              <Image
+                src={`/Images/${src}.png`}
                 alt={label}
                 className="object-cover w-full h-full"
               />
@@ -143,7 +143,7 @@ export default function Home() {
 
 <section className="relative w-full mx-auto my-8 rounded-[10px] overflow-hidden min-h-[400px] sm:min-h-[600px]">
   {/* Background Image */}
-  <img
+  <Image
     src="/Images/mario.jpg"
     alt="Mario"
     className="absolute inset-0 w-full h-full object-cover z-0"

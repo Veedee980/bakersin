@@ -12,7 +12,7 @@ const RecipeCommunitySection: React.FC = () => {
           {/* Left Column: Text Content */}
           <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
             <h2 className="text-text-heading-dark text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-              The Finest of Baker's Tik Tok <br />
+              The Finest of Bakers Tik Tok <br />
               Community Recipes
             </h2>
 
