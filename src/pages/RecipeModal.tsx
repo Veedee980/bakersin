@@ -5,20 +5,27 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import Image from 'next/image';
 
+interface Recipe {
+  title: string;
+  images: string[];
+  prepTime: string;
+  serves: string;
+  ingredients: string[];
+  directions: string[];
+}
+
 interface RecipeModalProps {
   isOpen: boolean;
   onClose: () => void;
-  recipe: {
-    title: string;
-    images: string[];
-    prepTime: string;
-    serves: string;
-    ingredients: string[];
-    directions: string[];
-  };
+  recipe?: Recipe | null;  // Make recipe optional or nullable to avoid errors
 }
 
 export default function RecipeModal({ isOpen, onClose, recipe }: RecipeModalProps) {
+  if (!recipe) {
+    // Render nothing or fallback UI while recipe is undefined/null
+    return null;
+  }
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={onClose}>
@@ -57,21 +64,29 @@ export default function RecipeModal({ isOpen, onClose, recipe }: RecipeModalProp
                 <div className="grid md:grid-cols-2 gap-6 p-6">
                   {/* Left: Main Image */}
                   <div>
-                    <Image
-                      src={recipe.images[0]}
-                      alt={recipe.title}
-                      className="rounded-lg w-full h-auto"
-                    />
-                    <div className="grid grid-cols-3 gap-2 mt-4">
-                      {recipe.images.map((img, idx) => (
+                    {recipe.images && recipe.images.length > 0 && (
+                      <>
                         <Image
-                          key={idx}
-                          src={img}
-                          alt={`${recipe.title} ${idx}`}
+                          src={recipe.images[0]}
+                          alt={recipe.title}
                           className="rounded-lg w-full h-auto"
+                          width={600}
+                          height={400}
                         />
-                      ))}
-                    </div>
+                        <div className="grid grid-cols-3 gap-2 mt-4">
+                          {recipe.images.map((img, idx) => (
+                            <Image
+                              key={idx}
+                              src={img}
+                              alt={`${recipe.title} ${idx}`}
+                              className="rounded-lg w-full h-auto"
+                              width={180}
+                              height={120}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
                   </div>
 
                   {/* Right: Content */}
@@ -91,7 +106,7 @@ export default function RecipeModal({ isOpen, onClose, recipe }: RecipeModalProp
                     {/* Ingredients */}
                     <h3 className="text-xl font-semibold text-[#261B6C] mt-4 mb-2">Ingredients</h3>
                     <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-                      {recipe.ingredients.map((item, idx) => (
+                      {recipe.ingredients?.map((item, idx) => (
                         <li key={idx}>{item}</li>
                       ))}
                     </ul>
@@ -99,7 +114,7 @@ export default function RecipeModal({ isOpen, onClose, recipe }: RecipeModalProp
                     {/* Directions */}
                     <h3 className="text-xl font-semibold text-[#261B6C] mt-4 mb-2">Directions</h3>
                     <ol className="list-decimal list-inside text-gray-700 space-y-1">
-                      {recipe.directions.map((step, idx) => (
+                      {recipe.directions?.map((step, idx) => (
                         <li key={idx}>{step}</li>
                       ))}
                     </ol>
