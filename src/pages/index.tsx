@@ -44,7 +44,7 @@ export default function Home() {
             <span className="underline decoration-[#B2904C] decoration-[6px]">best prices</span>.
           </h1>
           <p className="text-[#d3d3d3] text-base mb-6">
-            The freshest sandwiches you can make are with Baker’s Inn soft white loaf.
+            The freshest sandwiches you can make are with Bakers Inn soft white loaf.
           </p>
            <Link href="#about"><button className="bg-[#B2904C] text-white text-base px-6 py-3 rounded hover:bg-[#a58344] transition-colors duration-300 shadow-lg">
             READ MORE
@@ -71,7 +71,7 @@ export default function Home() {
           </h2>
           <div className="max-w-xl space-y-4">
             <p className="text-gray-700 leading-relaxed">
-              It all started back in the eighties when Baker's Inn was just a small confectionery company that employed 40 people and produced about 30,000 loaves a day. We now aim to provide a nourishing, convenient and accessible answer to hunger’s call.
+              It all started back in the eighties when Bakers Inn was just a small confectionery company that employed 40 people and produced about 30,000 loaves a day. We now aim to provide a nourishing, convenient and accessible answer to hungers call.
             </p>
             <Link href="/about"><button className="bg-[#B2904C] text-white text-base px-6 py-3 rounded hover:bg-[#a58344] transition-colors duration-300 shadow-lg">
               READ MORE
@@ -163,7 +163,7 @@ export default function Home() {
 
 <section>
            <h2 className="text-[rgba(38,27,108,1)] text-2xl md:text-3xl font-bold  text-center ">
-          Baker’s Recipe
+          Bakers Recipe
           </h2>
    <BakeryTabs />
 </section>

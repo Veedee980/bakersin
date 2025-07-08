@@ -78,7 +78,7 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
 
                 <p className="text-sm text-center mb-4 text-gray-700">
                   You can apply for product donations by completing this form, we will contact you should your application be successful.
-                  Please bear in mind that we will need at least 3 weeks’ notice to the date of your event.
+                  Please bear in mind that we will need at least 3 weeks notice to the date of your event.
                 </p>
 
                 <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -114,14 +114,14 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                     name="telephone"
                     value={formData.telephone}
                     onChange={handleChange}
-                    placeholder="Contact Person’s Telephone"
+                    placeholder="Contact Persons Telephone"
                     className="bg-gray-100 p-3 rounded"
                   />
                   <input
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Contact Person’s E-mail"
+                    placeholder="Contact Persons E-mail"
                     type="email"
                     className="bg-gray-100 p-3 rounded"
                   />

@@ -70,7 +70,7 @@ export default function Navbar() {
               href="/kidsCorner"
               className={isActive("/kidsCorner") ? "font-bold underline underline-offset-4" : ""}
             >
-              Kid's Corner
+              Kids Corner
             </Link>
             <Link href="/contact">
               <button className="bg-[#B2904C] text-white px-6 py-2 rounded font-medium">
@@ -113,7 +113,7 @@ export default function Navbar() {
           onClick={closeMenu}
           className={isActive("/kidsCorner") ? "font-bold underline underline-offset-4" : ""}
         >
-          Kid's Corner
+          Kids Corner
         </Link>
         <Link href="/contact" onClick={closeMenu}>
           <button className="bg-[#B2904C] text-white px-8 py-3 rounded font-medium">

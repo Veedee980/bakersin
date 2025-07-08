@@ -20,7 +20,7 @@ const RecipeCommunitySection: React.FC = () => {
               Make the finest croissants worthy of 🥐 Paris from your 🏠 home
             </p>
             <p className="text-text-heading-dark text-lg font-medium mb-4">
-              #Croissant #Zimbabwe #Paris #Baker's_Inn
+              #Croissant #Zimbabwe #Paris #Bakers_Inn
             </p>
             <div className="flex items-center text-text-heading-dark font-semibold text-lg">
               <Image
