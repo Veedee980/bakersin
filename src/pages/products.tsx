@@ -33,7 +33,6 @@ const ProductRangeHeroSection: React.FC = () => {
         </div>
       </section>
       <section>
-        <h1 className="text-3xl text-center font-bold mb-6">Our Products</h1>
         <ProductTabs />
       </section>
       

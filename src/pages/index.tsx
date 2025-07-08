@@ -15,7 +15,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section
-        className="relative w-full overflow-hidden flex justify-between items-center px-4 py-16 md:px-12 md:py-20 lg:px-20 lg:py-24"
+        className="relative w-full overflow-hidden flex justify-between items-center px-4 py-16 md:px-15 md:py-20 lg:px-20 lg:py-24"
         style={{
           backgroundColor: "#261B6C",
           borderRadius: "12px",
@@ -78,7 +78,7 @@ export default function Home() {
             </button></Link>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full sm:justify-center sm:items-center sm:max-w-2xl">
           {["sandwitch", "meatpie", "doughnut", "bread"].map((item) => (
             <img
               key={item}
@@ -95,7 +95,7 @@ export default function Home() {
         <h2 className="text-[rgba(38,27,108,1)] text-2xl md:text-3xl font-bold mb-8 text-center">
           Our Product Range
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mb-8 sm:justify-center sm:items-center sm:max-w-2xl">
           {[
             { src: "bread", label: "Bread" },
             { src: "meatpie", label: "Meat Pies" },
@@ -141,21 +141,26 @@ export default function Home() {
       />
       <ProductDonationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
-      {/* Kids Section */}
-<section className="relative w-full max-w-[1808px] h-200 mx-auto my-16 rounded-[10px] overflow-hidden px-4 py-16 flex flex-col items-center justify-center">
+<section className="relative w-full mx-auto my-8 rounded-[10px] overflow-hidden min-h-[400px] sm:min-h-[600px]">
   {/* Background Image */}
   <img
     src="/Images/mario.jpg"
     alt="Mario"
     className="absolute inset-0 w-full h-full object-cover z-0"
   />
-  {/* Content */}
+
+  {/* Overlay (optional) */}
+  <div className="absolute inset-0 bg-black/20 z-10"></div>
+
+  {/* Play Button */}
   <Link href="/kidsCorner">
-    <button className="absolute top-120 right-50 z-20 mt-8 bg-[#FF4655] text-white text-base px-8 py-4 rounded transition-colors duration-300 shadow-lg">
+    <button className="absolute bottom-4 right-4 z-20 bg-[#FF4655] text-white text-sm px-4 py-2 rounded shadow-md hover:bg-[#e33b4c] sm:text-base sm:px-6 sm:py-3">
       Play Games
     </button>
   </Link>
 </section>
+
+
 <section>
            <h2 className="text-[rgba(38,27,108,1)] text-2xl md:text-3xl font-bold  text-center ">
           Baker’s Recipe

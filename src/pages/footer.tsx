@@ -48,11 +48,11 @@ export default function Footer() {
         <div>
           <h4 className="font-bold mb-4 text-base">Sitemap</h4>
           <ul className="space-y-1">
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Products</li>
-            <li>Recipes</li>
-            <li>Kids Corner</li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/products">Products</Link></li>
+            <li><Link href="/recipes">Recipes</Link></li>
+            <li><Link href="/kidsCorner">Kids Corner</Link></li>
           </ul>
         </div>
       </div>
