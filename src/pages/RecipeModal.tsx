@@ -3,6 +3,7 @@
 import React from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
+import Image from 'next/image';
 
 interface RecipeModalProps {
   isOpen: boolean;
@@ -56,14 +57,14 @@ export default function RecipeModal({ isOpen, onClose, recipe }: RecipeModalProp
                 <div className="grid md:grid-cols-2 gap-6 p-6">
                   {/* Left: Main Image */}
                   <div>
-                    <img
+                    <Image
                       src={recipe.images[0]}
                       alt={recipe.title}
                       className="rounded-lg w-full h-auto"
                     />
                     <div className="grid grid-cols-3 gap-2 mt-4">
                       {recipe.images.map((img, idx) => (
-                        <img
+                        <Image
                           key={idx}
                           src={img}
                           alt={`${recipe.title} ${idx}`}

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 
 interface InfoSectionProps {
   title: string;
@@ -38,7 +39,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
 
       {imageSrc && (
         <div className="flex-1 flex justify-center items-center">
-          <img src={imageSrc} alt={title} className="max-w-xl rounded shadow-lg" />
+          <Image src={imageSrc} alt={title} className="max-w-xl rounded shadow-lg" />
         </div>
       )}
     </section>

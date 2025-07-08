@@ -26,7 +26,7 @@ export default function ContactHero() {
     
     {/* Harare Bread Factory */}
     <div className="bg-white p-6 rounded-lg shadow">
-      <img
+      <Image
         src="/Images/about.png"
         alt="Harare Factory"
         className="w-full h-52 object-cover rounded-md mb-4"
@@ -43,7 +43,7 @@ export default function ContactHero() {
 
     {/* Bulawayo Bread Factory */}
     <div className="bg-white p-6 rounded-lg shadow">
-      <img
+      <Image
         src="/Images/commitment.png"
         alt="Bulawayo Factory"
         className="w-full h-52 object-cover rounded-md mb-4"
@@ -101,7 +101,7 @@ export default function ContactHero() {
 <section className="bg-[#fdfcf9] py-10 px-4">
   <div className="max-w-5xl mx-auto">
     <div className="mb-6">
-      <img 
+      <Image
         src="/Images/info2.png" 
         alt="Packaging food for donation" 
         className="w-full h-80 object-cover rounded-lg"
