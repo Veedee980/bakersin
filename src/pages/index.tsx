@@ -10,6 +10,7 @@ import HeroBg from "../../public/African Pattern 1.png";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -139,7 +140,7 @@ export default function Home() {
         onButtonClick={() => setIsModalOpen(true)}
         reverse
       />
-      <ProductDonationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+       <ProductDonationModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
 
 <section className="relative w-full mx-auto my-8 rounded-[10px] overflow-hidden min-h-[400px] sm:min-h-[600px]">
   {/* Background Image */}

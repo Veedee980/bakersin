@@ -22,7 +22,7 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
     productLookingFor: '',
   });
 
-  function closeModal(): void {
+  function closeModal() {
     onClose();
   }
 
@@ -33,7 +33,6 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Handle form submit (e.g., send data to API)
     console.log(formData);
     closeModal();
   }
@@ -115,14 +114,14 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                     name="telephone"
                     value={formData.telephone}
                     onChange={handleChange}
-                    placeholder="Contact Persons Telephone"
+                    placeholder="Contact Person’s Telephone"
                     className="bg-gray-100 p-3 rounded"
                   />
                   <input
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Contact Persons E-mail"
+                    placeholder="Contact Person’s E-mail"
                     type="email"
                     className="bg-gray-100 p-3 rounded"
                   />
@@ -186,5 +185,6 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
     </Transition>
   );
 }
+
 
 
