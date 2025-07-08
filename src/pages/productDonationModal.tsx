@@ -22,7 +22,7 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
     productLookingFor: '',
   });
 
-  function closeModal() {
+  function closeModal(): void {
     onClose();
   }
 
@@ -33,8 +33,8 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Replace this with your submit logic (API call, etc)
-    console.log('Form submitted:', formData);
+    // Handle form submit (e.g., send data to API)
+    console.log(formData);
     closeModal();
   }
 
@@ -69,20 +69,16 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                   type="button"
                   onClick={closeModal}
                   className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl"
-                  aria-label="Close modal"
                 >
                   &times;
                 </button>
 
-                <Dialog.Title
-                  as="h3"
-                  className="text-2xl font-bold text-center mb-6 text-[rgba(38,27,108,1)]"
-                >
+                <Dialog.Title as="h3" className="text-2xl font-bold text-center mb-6 text-[rgba(38,27,108,1)]">
                   Request Product Donations
                 </Dialog.Title>
 
                 <p className="text-sm text-center mb-4 text-gray-700">
-                  You can apply for product donations by completing this form, and we will contact you should your application be successful.
+                  You can apply for product donations by completing this form, we will contact you should your application be successful.
                   Please bear in mind that we will need at least 3 weeks notice to the date of your event.
                 </p>
 
@@ -93,7 +89,6 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                     onChange={handleChange}
                     placeholder="Name of Organisation"
                     className="bg-gray-100 p-3 rounded"
-                    required
                   />
                   <input
                     name="contactName"
@@ -101,7 +96,6 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                     onChange={handleChange}
                     placeholder="Name of Contact Person"
                     className="bg-gray-100 p-3 rounded"
-                    required
                   />
                   <input
                     name="contactPosition"
@@ -121,18 +115,16 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                     name="telephone"
                     value={formData.telephone}
                     onChange={handleChange}
-                    placeholder="Contact Person’s Telephone"
+                    placeholder="Contact Persons Telephone"
                     className="bg-gray-100 p-3 rounded"
-                    type="tel"
                   />
                   <input
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Contact Person’s E-mail"
+                    placeholder="Contact Persons E-mail"
                     type="email"
                     className="bg-gray-100 p-3 rounded"
-                    required
                   />
                   <input
                     name="eventDate"
@@ -141,7 +133,6 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                     placeholder="Date of Event"
                     type="date"
                     className="bg-gray-100 p-3 rounded"
-                    required
                   />
 
                   <select
@@ -149,11 +140,8 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                     value={formData.useOfDonation}
                     onChange={handleChange}
                     className="bg-gray-100 p-3 rounded"
-                    required
                   >
-                    <option value="" disabled>
-                      Intended Use of Donation
-                    </option>
+                    <option value="">Intended Use of Donation</option>
                     <option value="Community Event">Community Event</option>
                     <option value="Charity Drive">Charity Drive</option>
                     <option value="School Program">School Program</option>
@@ -164,11 +152,8 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                     value={formData.numberOfAttendants}
                     onChange={handleChange}
                     className="bg-gray-100 p-3 rounded"
-                    required
                   >
-                    <option value="" disabled>
-                      Number of Attendants
-                    </option>
+                    <option value="">Number of Attendants</option>
                     <option value="0-50">0-50</option>
                     <option value="51-100">51-100</option>
                     <option value="100+">100+</option>
@@ -179,11 +164,8 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                     value={formData.productLookingFor}
                     onChange={handleChange}
                     className="bg-gray-100 p-3 rounded"
-                    required
                   >
-                    <option value="" disabled>
-                      What Product Are You Specifically Looking For?
-                    </option>
+                    <option value="">What Product Are You Specifically Looking For?</option>
                     <option value="Product A">Product A</option>
                     <option value="Product B">Product B</option>
                     <option value="Product C">Product C</option>
@@ -204,4 +186,5 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
     </Transition>
   );
 }
+
 
