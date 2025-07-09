@@ -140,7 +140,7 @@ export default function Home() {
         onButtonClick={() => setIsModalOpen(true)}
         reverse
       />
-       <ProductDonationPage isOpen={isOpen} onClose={() => setIsOpen(false)} />
+       <ProductDonationPage isOpen={true} onClose={() => {}} />
 
 <section className="relative w-full mx-auto my-8 rounded-[10px] overflow-hidden min-h-[400px] sm:min-h-[600px]">
   {/* Background Image */}
