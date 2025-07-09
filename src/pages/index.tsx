@@ -10,7 +10,6 @@ import HeroBg from "../../public/African Pattern 1.png";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
