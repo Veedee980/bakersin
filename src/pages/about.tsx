@@ -10,7 +10,7 @@ const AboutUsHero: React.FC = () => {
       <section className="relative w-full h-[60vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
         {/* Background Image using Next.js Image component */}
         <Image
-          src="/images/about.png" // Adjust this path to your image's location
+          src="/Images/about.png" // Adjust this path to your image's location
           alt="Inside a modern bakery"
           layout="fill"
           objectFit="cover" 
@@ -61,7 +61,7 @@ const AboutUsHero: React.FC = () => {
         <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left w-full md:w-1/2">
           <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-icon-circle-gold flex items-center justify-center mb-6 md:mb-0 md:mr-8">
             <Image
-              src="/images/flag.png" 
+              src="/Images/flag.png" 
               alt="Mission Flag Icon"
               width={70} 
               height={70}
@@ -191,7 +191,7 @@ const AboutUsHero: React.FC = () => {
         <div className="w-full md:w-1/2 flex justify-center md:justify-start">
           <div className="relative w-full h-[400px] sm:h-[500px] md:h-auto md:min-h-[500px] lg:min-h-[600px] max-w-md md:max-w-none">
             <Image
-              src="/images/ceo.png" 
+              src="/Images/ceo.png" 
               alt="CEO of Baker's Inn, Nyoni Mazango"
               layout="fill"
               objectFit="cover"

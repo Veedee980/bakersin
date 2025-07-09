@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import BakeryTabs from './tabs'; 
+import BakeryTabs from '../components/tabs'; 
 
 const RecipeCommunitySection: React.FC = () => {
   return (

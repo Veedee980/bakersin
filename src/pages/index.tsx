@@ -6,7 +6,7 @@ import Link from "next/link";
 import InfoSection from "./InforSection";
 import FactoryTourModal from './book';
 import ProductDonationModal from '../components/productDonationModal'; // ✅ Only import what you use
-import BakeryTabs from './tabs';
+import BakeryTabs from '../components/tabs';
 
 import HeroBg from "../../public/African Pattern 1.png";
 
@@ -125,12 +125,13 @@ export default function HomePage() { // ✅ Use a clear component name
         </Link>
       </section>
 
-      <section>
-        <h2 className="text-[rgba(38,27,108,1)] text-2xl md:text-3xl font-bold text-center">
-          Bakers Recipe
-        </h2>
-        <BakeryTabs />
-      </section>
+<section>
+  <h2 className="text-[rgba(38,27,108,1)] text-2xl md:text-3xl font-bold text-center mb-4">
+    Bakers Recipe
+  </h2>
+  <BakeryTabs />
+</section>
+
 
       {/* Promotions Section */}
       <section
