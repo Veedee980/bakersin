@@ -6,6 +6,7 @@ import Link from "next/link";
 import InfoSection from "./InforSection";
 import FactoryTourModal from './book';
 import ProductDonationModal from '../components/productDonationModal'; // ✅ Only import what you use
+import BakeryTabs from './tabs';
 
 import HeroBg from "../../public/African Pattern 1.png";
 
@@ -108,6 +109,68 @@ export default function HomePage() { // ✅ Use a clear component name
   isOpen={isDonationModalOpen}
   onClose={() => setIsDonationModalOpen(false)}
 />
+      <section className="relative w-full mx-auto my-8 rounded-[10px] overflow-hidden min-h-[400px] sm:min-h-[600px]">
+        <Image
+          src="/Images/mario.jpg"
+          alt="Mario"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute inset-0 bg-black/20 z-10"></div>
+        <Link href="/kidsCorner">
+          <button className="absolute bottom-4 right-4 z-20 bg-[#FF4655] text-white text-sm px-4 py-2 rounded shadow-md hover:bg-[#e33b4c] sm:text-base sm:px-6 sm:py-3">
+            Play Games
+          </button>
+        </Link>
+      </section>
+
+      <section>
+        <h2 className="text-[rgba(38,27,108,1)] text-2xl md:text-3xl font-bold text-center">
+          Bakers Recipe
+        </h2>
+        <BakeryTabs />
+      </section>
+
+      {/* Promotions Section */}
+      <section
+        className="relative w-full overflow-hidden flex justify-between items-center px-4 py-16 md:px-12 md:py-20 lg:px-20 lg:py-24"
+        style={{
+          backgroundColor: "#B2904C",
+          borderRadius: "12px",
+          margin: "40px auto",
+          maxWidth: "95%",
+          minHeight: "320px",
+        }}
+      >
+        <div className="relative z-10 w-full md:w-1/2 lg:w-[500px] text-center md:text-left pr-0 md:pr-8 lg:pr-12">
+          <h2 className="text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-white font-bold leading-tight mb-6">
+            Get Notified About <br className="hidden sm:block" /> Promotions We Offer
+          </h2>
+          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto md:mx-0">
+            <input
+              type="email"
+              placeholder="your email"
+              className="flex-grow p-3 rounded bg-white/20 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <button
+              type="submit"
+              className="bg-[#261B6C] hover:bg-[#1f145a] text-white font-semibold py-3 px-6 rounded transition duration-300"
+            >
+              SUBMIT
+            </button>
+          </form>
+        </div>
+        <div className="relative hidden md:flex flex-shrink-0 w-[360px] h-[260px] lg:w-[440px] lg:h-[300px] items-end justify-end z-10">
+          <Image
+            src="/Images/group-1.png"
+            alt="Bread Variant"
+            width={500}
+            height={400}
+            className="w-[500px] h-auto object-contain"
+          />
+        </div>
+      </section>
 
     </>
   );
