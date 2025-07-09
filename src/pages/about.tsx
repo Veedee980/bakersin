@@ -80,7 +80,7 @@ const AboutUsHero: React.FC = () => {
         <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left w-full md:w-1/2 mt-8 md:mt-0">
           <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-icon-circle-gold flex items-center justify-center mb-6 md:mb-0 md:mr-8">
             <Image
-              src="/images/eye.png" 
+              src="/Images/eye.png" 
               alt="Vision Eye Icon"
               width={70}
               height={70}
