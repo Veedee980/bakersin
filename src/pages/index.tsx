@@ -1,17 +1,15 @@
 'use client';
 
 import React, { useState } from "react";
-import type * as ReactType from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import InfoSection from "./InforSection";
 import FactoryTourModal from './book';
-import BakeryTabs from './tabs';
-import ProductDonationModal from './productDonationModal'; // import modal correctly
+import ProductDonationModal from './productDonationModal'; // ✅ Only import what you use
 
 import HeroBg from "../../public/African Pattern 1.png";
 
-const Home: React.FC = () => {
+export default function HomePage() { // ✅ Use a clear component name
   const [isFactoryModalOpen, setIsFactoryModalOpen] = useState(false);
   const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
 
@@ -68,11 +66,24 @@ const Home: React.FC = () => {
       </section>
 
       {/* About Section */}
-      <section className="about max-w-6xl mx-auto px-4 py-16 flex flex-col items-center" id="about">
-        {/* ... about content here ... */}
+      <section id="about" className="max-w-4xl mx-auto px-4 py-16 text-center">
+        <h2 className="text-[rgba(38,27,108,1)] text-2xl md:text-3xl font-bold mb-4">
+          About Bakers Inn
+        </h2>
+        <p className="text-gray-700 mb-4">
+          It all started back in the eighties when Bakers Inn was just a small confectionery company
+          that employed 40 people and produced about 30,000 loaves a day. We now aim to provide a
+          nourishing, convenient and accessible answer to hunger’s call.
+        </p>
+        <Link href="/about">
+          <button
+            type="button"
+            className="bg-[#B2904C] text-white text-base px-6 py-3 rounded hover:bg-[#a58344] transition-colors duration-300 shadow-lg"
+          >
+            READ MORE
+          </button>
+        </Link>
       </section>
-
-      {/* Other sections skipped for brevity - keep your existing code */}
 
       {/* Book Factory Tour */}
       <InfoSection
@@ -94,8 +105,7 @@ const Home: React.FC = () => {
         reverse
       />
       <ProductDonationModal isOpen={isDonationModalOpen} onClose={() => setIsDonationModalOpen(false)} />
-
-      {/* Rest of your components ... */}
     </>
   );
 }
+
