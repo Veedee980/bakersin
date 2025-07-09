@@ -1,15 +1,18 @@
+'use client';
+
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import InfoSection from "./InforSection";
 import FactoryTourModal from './book';
-import BakeryTabs from'./tabs'
-import ProductDonationPage from './productDonationModal';
+import BakeryTabs from './tabs';
+import ProductDonationModal from './productDonationModal'; // ✅ Use the MODAL component, not as a page!
 
 import HeroBg from "../../public/African Pattern 1.png";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFactoryModalOpen, setIsFactoryModalOpen] = useState(false);
+  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false); // ✅ Correct name and used properly
 
   return (
     <>
@@ -46,9 +49,11 @@ export default function Home() {
           <p className="text-[#d3d3d3] text-base mb-6">
             The freshest sandwiches you can make are with Bakers Inn soft white loaf.
           </p>
-           <Link href="#about"><button className="bg-[#B2904C] text-white text-base px-6 py-3 rounded hover:bg-[#a58344] transition-colors duration-300 shadow-lg">
-            READ MORE
-          </button></Link>
+          <Link href="#about">
+            <button className="bg-[#B2904C] text-white text-base px-6 py-3 rounded hover:bg-[#a58344] transition-colors duration-300 shadow-lg">
+              READ MORE
+            </button>
+          </Link>
         </div>
 
         {/* Bread Images */}
@@ -71,11 +76,13 @@ export default function Home() {
           </h2>
           <div className="max-w-xl space-y-4">
             <p className="text-gray-700 leading-relaxed">
-              It all started back in the eighties when Bakers Inn was just a small confectionery company that employed 40 people and produced about 30,000 loaves a day. We now aim to provide a nourishing, convenient and accessible answer to hungers call.
+              It all started back in the eighties when Bakers Inn was just a small confectionery company that employed 40 people and produced about 30,000 loaves a day. We now aim to provide a nourishing, convenient and accessible answer to hunger’s call.
             </p>
-            <Link href="/about"><button className="bg-[#B2904C] text-white text-base px-6 py-3 rounded hover:bg-[#a58344] transition-colors duration-300 shadow-lg">
-              READ MORE
-            </button></Link>
+            <Link href="/about">
+              <button className="bg-[#B2904C] text-white text-base px-6 py-3 rounded hover:bg-[#a58344] transition-colors duration-300 shadow-lg">
+                READ MORE
+              </button>
+            </Link>
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full sm:justify-center sm:items-center sm:max-w-2xl">
@@ -85,6 +92,8 @@ export default function Home() {
               src={`/Images/${item}.png`}
               alt={item}
               className="rounded w-full h-full object-cover"
+              width={400}
+              height={400}
             />
           ))}
         </div>
@@ -107,6 +116,8 @@ export default function Home() {
                 src={`/Images/${src}.png`}
                 alt={label}
                 className="object-cover w-full h-full"
+                width={400}
+                height={400}
               />
               <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black/70 to-transparent" />
               <span className="absolute bottom-2 left-2 text-white font-semibold text-lg px-2 py-1">
@@ -115,9 +126,11 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <Link href="/products"><button className="bg-[#B2904C] text-white text-base px-6 py-3 rounded hover:bg-[#a58344] transition-colors duration-300 shadow-lg">
-          VIEW COMPLETE RANGE
-        </button></Link>
+        <Link href="/products">
+          <button className="bg-[#B2904C] text-white text-base px-6 py-3 rounded hover:bg-[#a58344] transition-colors duration-300 shadow-lg">
+            VIEW COMPLETE RANGE
+          </button>
+        </Link>
       </section>
 
       {/* Book Factory Tour */}
@@ -126,9 +139,9 @@ export default function Home() {
         text="Keen on seeing how Baker’s Inn products are made? Are you interested in a field trip for your school's class? Get in touch with us to book a tour of our factory that is closest to you. Fill in the booking form and we will get back to you."
         buttonText="BOOK FACTORY TOUR"
         imageSrc="/Images/info1.png"
-        onButtonClick={() => setIsModalOpen(true)}
+        onButtonClick={() => setIsFactoryModalOpen(true)}
       />
-      <FactoryTourModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <FactoryTourModal isOpen={isFactoryModalOpen} onClose={() => setIsFactoryModalOpen(false)} />
 
       {/* Request A Donation */}
       <InfoSection
@@ -136,38 +149,34 @@ export default function Home() {
         text="If you are hosting an event that aligns with what we donate to, we’re more than glad to help. Fill in the donation request form to let us know beforehand how we can increase your event’s impact in the local community."
         buttonText="REQUEST DONATION"
         imageSrc="/Images/info2.png"
-        onButtonClick={() => setIsModalOpen(true)}
+        onButtonClick={() => setIsDonationModalOpen(true)}
         reverse
       />
-       <ProductDonationPage isOpen={true} onClose={() => {}} />
+      <ProductDonationModal isOpen={isDonationModalOpen} onClose={() => setIsDonationModalOpen(false)} />
 
-<section className="relative w-full mx-auto my-8 rounded-[10px] overflow-hidden min-h-[400px] sm:min-h-[600px]">
-  {/* Background Image */}
-  <Image
-    src="/Images/mario.jpg"
-    alt="Mario"
-    className="absolute inset-0 w-full h-full object-cover z-0"
-  />
+      {/* Kids Corner */}
+      <section className="relative w-full mx-auto my-8 rounded-[10px] overflow-hidden min-h-[400px] sm:min-h-[600px]">
+        <Image
+          src="/Images/mario.jpg"
+          alt="Mario"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute inset-0 bg-black/20 z-10"></div>
+        <Link href="/kidsCorner">
+          <button className="absolute bottom-4 right-4 z-20 bg-[#FF4655] text-white text-sm px-4 py-2 rounded shadow-md hover:bg-[#e33b4c] sm:text-base sm:px-6 sm:py-3">
+            Play Games
+          </button>
+        </Link>
+      </section>
 
-  {/* Overlay (optional) */}
-  <div className="absolute inset-0 bg-black/20 z-10"></div>
-
-  {/* Play Button */}
-  <Link href="/kidsCorner">
-    <button className="absolute bottom-4 right-4 z-20 bg-[#FF4655] text-white text-sm px-4 py-2 rounded shadow-md hover:bg-[#e33b4c] sm:text-base sm:px-6 sm:py-3">
-      Play Games
-    </button>
-  </Link>
-</section>
-
-
-<section>
-           <h2 className="text-[rgba(38,27,108,1)] text-2xl md:text-3xl font-bold  text-center ">
+      <section>
+        <h2 className="text-[rgba(38,27,108,1)] text-2xl md:text-3xl font-bold text-center">
           Bakers Recipe
-          </h2>
-   <BakeryTabs />
-</section>
-
+        </h2>
+        <BakeryTabs />
+      </section>
 
       {/* Promotions Section */}
       <section
@@ -202,7 +211,7 @@ export default function Home() {
           <Image
             src="/Images/group-1.png"
             alt="Bread Variant"
-            width={300}
+            width={500}
             height={400}
             className="w-[500px] h-auto object-contain"
           />
