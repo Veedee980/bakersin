@@ -4,7 +4,7 @@ import Link from "next/link";
 import InfoSection from "./InforSection";
 import FactoryTourModal from './book';
 import BakeryTabs from'./tabs'
-import ProductDonationModal from './productDonationModal';
+import ProductDonationPage from './productDonationModal';
 
 import HeroBg from "../../public/African Pattern 1.png";
 
@@ -140,7 +140,7 @@ export default function Home() {
         onButtonClick={() => setIsModalOpen(true)}
         reverse
       />
-       <ProductDonationModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+       <ProductDonationPage isOpen={isOpen} onClose={() => setIsOpen(false)} />
 
 <section className="relative w-full mx-auto my-8 rounded-[10px] overflow-hidden min-h-[400px] sm:min-h-[600px]">
   {/* Background Image */}
