@@ -1,6 +1,5 @@
-'use client';
+"use client";
 import React from "react";
-
 type Recipe = {
   title: string;
   images: string[];
@@ -11,8 +10,6 @@ type Recipe = {
 };
 
 type TabCategory = "breakfast" | "lunch" | "dinner";
-
-const tabCategories: TabCategory[] = ["breakfast", "lunch", "dinner"];
 
 const recipesByTab: Record<TabCategory, Recipe[]> = {
   breakfast: [
@@ -49,7 +46,9 @@ const recipesByTab: Record<TabCategory, Recipe[]> = {
 
 export default function BakeryTabs() {
   const [value, setValue] = React.useState<number>(0);
-  const [selectedRecipe, setSelectedRecipe] = React.useState<Recipe | null>(null);
+  const [selectedRecipe, setSelectedRecipe] = React.useState<Recipe | null>(
+    null
+  );
 
   const handleTabChange = (tabIndex: number) => {
     setValue(tabIndex);
@@ -60,49 +59,27 @@ export default function BakeryTabs() {
     setSelectedRecipe(recipe);
   };
 
-  const currentCategory = tabCategories[value];
-
   return (
     <div>
+      {/* Example UI */}
       <div>
-        {tabCategories.map((category, idx) => (
-          <button
-            key={category}
-            onClick={() => handleTabChange(idx)}
-            style={{
-              fontWeight: value === idx ? "bold" : "normal",
-              marginRight: 8,
-            }}
-            type="button"
-          >
-            {category.charAt(0).toUpperCase() + category.slice(1)}
-          </button>
-        ))}
+        <button onClick={() => handleTabChange(0)}>Breakfast</button>
+        <button onClick={() => handleTabChange(1)}>Lunch</button>
+        <button onClick={() => handleTabChange(2)}>Dinner</button>
       </div>
 
       <div>
-        {recipesByTab[currentCategory].map((recipe) => (
-          <div
-            key={recipe.title}
-            onClick={() => handleSelectRecipe(recipe)}
-            style={{
-              cursor: "pointer",
-              border: selectedRecipe?.title === recipe.title ? "2px solid #333" : "1px solid #ccc",
-              margin: "8px 0",
-              padding: "8px",
-              borderRadius: "4px",
-            }}
-            tabIndex={0}
-            role="button"
-            aria-pressed={selectedRecipe?.title === recipe.title}
-          >
-            <h3>{recipe.title}</h3>
-          </div>
-        ))}
+        {recipesByTab[["breakfast", "lunch", "dinner"][value] as TabCategory].map(
+          (recipe) => (
+            <div key={recipe.title} onClick={() => handleSelectRecipe(recipe)}>
+              <h3>{recipe.title}</h3>
+            </div>
+          )
+        )}
       </div>
 
       {selectedRecipe && (
-        <div style={{ marginTop: 16 }}>
+        <div>
           <h2>{selectedRecipe.title}</h2>
           <p>Prep Time: {selectedRecipe.prepTime}</p>
           <p>Serves: {selectedRecipe.serves}</p>
