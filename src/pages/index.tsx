@@ -6,7 +6,7 @@ import Link from "next/link";
 import InfoSection from "./InforSection";
 import FactoryTourModal from './book';
 import BakeryTabs from './tabs';
-import ProductDonationModal from './productDonationModal'; // ✅ Use the MODAL component, not as a page!
+import ProductDonationModal from './components/productDonationModal'; // ✅ Use the MODAL component, not as a page!
 
 import HeroBg from "../../public/African Pattern 1.png";
 
