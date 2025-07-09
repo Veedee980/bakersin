@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import InfoSection from "./InforSection";
 import FactoryTourModal from './book';
-import ProductDonationModal from './productDonationModal'; // ✅ Only import what you use
+import ProductDonationModal from './components/productDonationModal'; // ✅ Only import what you use
 
 import HeroBg from "../../public/African Pattern 1.png";
 
