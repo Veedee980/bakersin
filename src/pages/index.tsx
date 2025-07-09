@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
+import type * as ReactType from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import InfoSection from "./InforSection";
@@ -10,7 +11,7 @@ import ProductDonationModal from './productDonationModal'; // import modal corre
 
 import HeroBg from "../../public/African Pattern 1.png";
 
-export default function Home(): JSX.Element {
+const Home: React.FC = () => {
   const [isFactoryModalOpen, setIsFactoryModalOpen] = useState(false);
   const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
 
