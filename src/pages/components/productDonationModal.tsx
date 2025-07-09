@@ -1,6 +1,6 @@
 'use client';
 
-import { Dialog, Transition } from '@headlessui/react';
+import { Dialog, Transition, TransitionChild, DialogPanel, DialogTitle } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 
 interface ProductDonationModalProps {
@@ -36,7 +36,7 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-50" open={isOpen} onClose={onClose}>
-        <Transition.Child
+        <TransitionChild
           as={Fragment}
           enter="ease-out duration-300"
           enterFrom="opacity-0"
@@ -46,11 +46,11 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
           leaveTo="opacity-0"
         >
           <div className="fixed inset-0 bg-black/40 backdrop-blur-sm" />
-        </Transition.Child>
+        </TransitionChild>
 
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4">
-            <Transition.Child
+            <TransitionChild
               as={Fragment}
               enter="ease-out duration-300"
               enterFrom="opacity-0 scale-95"
@@ -59,7 +59,7 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all relative">
+              <DialogPanel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all relative">
                 <button
                   type="button"
                   onClick={onClose}
@@ -68,9 +68,9 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                   &times;
                 </button>
 
-                <Dialog.Title as="h3" className="text-2xl font-bold text-center mb-6 text-[rgba(38,27,108,1)]">
+                <DialogTitle as="h3" className="text-2xl font-bold text-center mb-6 text-[rgba(38,27,108,1)]">
                   Request Product Donations
-                </Dialog.Title>
+                </DialogTitle>
 
                 <p className="text-sm text-center mb-4 text-gray-700">
                   You can apply for product donations by completing this form, we will contact you should your application be successful.
@@ -182,8 +182,8 @@ export default function ProductDonationModal({ isOpen, onClose }: ProductDonatio
                     SUBMIT APPLICATION
                   </button>
                 </form>
-              </Dialog.Panel>
-            </Transition.Child>
+              </DialogPanel>
+            </TransitionChild>
           </div>
         </div>
       </Dialog>

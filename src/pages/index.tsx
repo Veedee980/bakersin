@@ -104,7 +104,11 @@ export default function HomePage() { // ✅ Use a clear component name
         onButtonClick={() => setIsDonationModalOpen(true)}
         reverse
       />
-      <ProductDonationModal isOpen={isDonationModalOpen} onClose={() => setIsDonationModalOpen(false)} />
+      <ProductDonationModal
+  isOpen={isDonationModalOpen}
+  onClose={() => setIsDonationModalOpen(false)}
+/>
+
     </>
   );
 }
